@@ -9,9 +9,13 @@
     <script src="libs/angular/angular-ui-router-grant.min.js"></script>
 
     <script src="js/app.js"></script>
-    <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/Login.js"></script>
+    <script src="js/controllers/Gerente.js"></script>
+    <script src="js/controllers/Garcom.js"></script>
+    <script src="js/controllers/Cozinha.js"></script>
     <script src="js/routers/routers.js"></script>
 
+    <link type="text/css" rel="stylesheet" href="css/style.css">
     <link type="text/css" rel="stylesheet" href="libs/bootstrap/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="libs/bootstrap/bootstrap-theme.min.css">
   </head>
@@ -19,7 +23,9 @@
 
     <div ui-view="navbar"></div>
 
-    <div ui-view="content"></div>
+    <div class="container">
+      <div ui-view="content"></div>
+    </div>
 
   </body>
 </html>
