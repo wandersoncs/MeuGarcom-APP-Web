@@ -1,13 +1,19 @@
 app
   .controller('LoginController', function ($scope, $state) {
     $scope.title = 'Login';
-    $scope.erro = '';
 
-    $scope.login = function (usuario) {
-      if (usuario.user === 'gerente' && usuario.password === 'gerente') {
-        $state.go('gerente');
-      } else {
-        erro = 'Usuario e/ou Senha incorretas';
+    $scope.logar = function (login, senha, cargo) {
+
+      switch (cargo) {
+        case 'gerente':
+          $state.go('gerente');
+        break;
+        case 'garcom':
+          $state.go('garcom');
+        break;
+        case 'cozinha':
+          $state.go('cozinha');
+        break;
       }
     };
 

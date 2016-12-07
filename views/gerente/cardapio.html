@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-10">
+  <div class="col-md-10 col-md-offset-1">
 
     <table class="table table-striped">
       <tr>
@@ -7,7 +7,7 @@
         <th>Nome</th>
         <th>Descricao</th>
         <th>Preco</th>
-        <th>Remover?</th>
+        <th></th>
       </tr>
 
       <tr ng-repeat="prato in pratos">
@@ -17,23 +17,30 @@
         <td>{{prato.preco}}</td>
         <td><a href="#" ng-click="removerPrato(prato)">Remover</a></td>
       </tr>
-    </table>
 
-    <form class="form-inline">
-      <div class="form-group">
-        <input type="number" class="form-control" placeholder="codigo" ng-model="prato.id">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="nome" ng-model="prato.nome">
-      </div>
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="descricao" ng-model="prato.descricao">
-      </div>
-      <div class="form-group">
-        <input type="number" class="form-control" placeholder="preco" ng-model="prato.preco">
-      </div>
-      <button type="button" class="btn btn-success" ng-click="adicionarPrato(prato)">Adicionar</button>
-    </form>
+      <tr>
+        <td></td>
+        <td>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="nome" ng-model="prato.nome">
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="descricao" ng-model="prato.descricao">
+          </div>
+        </td>
+        <td>
+          <div class="form-group">
+            <input type="number" class="form-control" placeholder="preco" ng-model="prato.preco">
+          </div>
+        </td>
+        <td>
+          <button type="button" class="btn btn-success btn-block" ng-click="adicionarPrato(prato)">Adicionar</button>
+        </td>
+      </tr>
+
+    </table>
 
   </div>
 </div>

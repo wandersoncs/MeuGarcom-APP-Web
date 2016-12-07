@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-10">
+  <div class="col-md-10 col-md-offset-1">
 
     <table class="table table-striped">
       <tr>
@@ -7,7 +7,7 @@
         <th>Nome</th>
         <th>Descricao</th>
         <th>Preco</th>
-        <th>Pronto?</th>
+        <th></th>
       </tr>
 
       <tr ng-repeat="prato in pratos">
@@ -15,7 +15,7 @@
         <td>{{prato.nome}}</td>
         <td>{{prato.descricao}}</td>
         <td>{{prato.preco}}</td>
-        <td><a href="#" ng-click="pratoPronto(prato)">Preparado</a></td>
+        <td><a href="#" ng-click="pratoPronto(prato)">Prato pronto</a></td>
       </tr>
     </table>
 

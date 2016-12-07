@@ -1,15 +1,11 @@
 app
 
   .controller('CozinhaController', function ($scope) {
-    $scope.title = 'Cardapio';
+    $scope.title = 'Pratos para serem preparados';
 
     $scope.logout = function () {
-      
+
     };
-
-  })
-
-  .controller('CardapioController', function ($scope) {
 
   })
 ;
