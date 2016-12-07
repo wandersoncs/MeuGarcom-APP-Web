@@ -1,3 +1,23 @@
 <div class="row">
+  <div class="col-md-10 col-md-offset-10">
 
+    <table class="table table-striped">
+      <tr>
+        <th>Codigo</th>
+        <th>Nome</th>
+        <th>Descricao</th>
+        <th>Preco</th>
+        <th>Entregue?</th>
+      </tr>
+
+      <tr ng-repeat="prato in pratos">
+        <td>{{prato.id}}</td>
+        <td>{{prato.nome}}</td>
+        <td>{{prato.descricao}}</td>
+        <td>{{prato.preco}}</td>
+        <td><a href="#" ng-click="pratoEntregue(prato)">Entregar</a></td>
+      </tr>
+    </table>
+
+  </div>
 </div>

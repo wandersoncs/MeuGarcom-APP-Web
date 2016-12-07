@@ -1,4 +1,5 @@
 app
+
   .config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
@@ -10,11 +11,11 @@ app
         , views: {
           'navbar': {
             templateUrl: 'views/login/header.html'
-            , controller: 'MainController'
+            , controller: 'LoginController'
           }
           , 'content': {
             templateUrl: 'views/login/index.html'
-            , controller: 'MainController'
+            , controller: 'LoginController'
           }
         }
       })
@@ -27,35 +28,21 @@ app
             , controller: 'GerenteController'
           }
           , 'content': {
-            templateUrl: 'views/gerente/cadastro-garcom.html'
+            templateUrl: 'views/gerente/index.html'
             , controller: 'GerenteController'
           }
         }
       })
 
-      .state('cadastro-garcom', {
-        url: '/cadastro-garcom'
+      .state('funcionario', {
+        url: '/funcionario'
         , views: {
           'navbar': {
             templateUrl: 'views/gerente/header.html'
             , controller: 'GerenteController'
           }
           , 'content': {
-            templateUrl: 'views/gerente/cadastro-garcom.html'
-            , controller: 'GerenteController'
-          }
-        }
-      })
-
-      .state('cadastro-cozinha', {
-        url: '/cadastro-cozinha'
-        , views: {
-          'navbar': {
-            templateUrl: 'views/gerente/header.html'
-            , controller: 'GerenteController'
-          }
-          , 'content': {
-            templateUrl: 'views/gerente/cadastro-cozinha.html'
+            templateUrl: 'views/gerente/funcionario.html'
             , controller: 'GerenteController'
           }
         }
@@ -75,30 +62,16 @@ app
         }
       })
 
-      .state('cadastro-cardapio', {
-        url: '/cadastro-cardapio'
-        , views: {
-          'navbar': {
-            templateUrl: 'views/cozinha/header.html'
-            , controller: 'CozinhaController'
-          }
-          , 'content': {
-            templateUrl: 'views/cozinha/cadastro-cardapio.html'
-            , controller: 'CozinhaController'
-          }
-        }
-      })
-
       .state('cardapio', {
         url: '/cardapio'
         , views: {
           'navbar': {
-            templateUrl: 'views/cozinha/header.html'
-            , controller: 'CozinhaController'
+            templateUrl: 'views/gerente/header.html'
+            , controller: 'GerenteController'
           }
           , 'content': {
-            templateUrl: 'views/cozinha/cadastro-cardapio.html'
-            , controller: 'CozinhaController'
+            templateUrl: 'views/gerente/cardapio.html'
+            , controller: 'CardapioController'
           }
         }
       })
@@ -107,29 +80,15 @@ app
         url: '/garcom'
         , views: {
           'navbar': {
-            templateUrl: 'views/cozinha/header.html'
-            , controller: 'CozinhaController'
+            templateUrl: 'views/garcom/header.html'
+            , controller: 'GarcomController'
           }
           , 'content': {
-            templateUrl: 'views/cozinha/cadastro-cardapio.html'
-            , controller: 'CozinhaController'
+            templateUrl: 'views/garcom/index.html'
+            , controller: 'GarcomController'
           }
         }
       })
-
-      .state('relatorio', {
-        url: '/relatorio'
-        , views: {
-          'navbar': {
-            templateUrl: 'views/gerente/header.html'
-            , controller: 'GerenteController'
-          }
-          , 'content': {
-            templateUrl: 'views/gerente/relatorio.html'
-            , controller: 'GerenteController'
-          }
-        }
-      })
-
       ;
-  });
+  })
+;
