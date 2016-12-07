@@ -1,13 +1,14 @@
 # MeuGarcom
 
+```javascript
 Usuario(long id, String nome, String cargo, String login, String senha, long restaurante)
 Restaurante(long id, long longitude, long latitude, String nome, int qntMesa)
 Cliente(String nome, int mesa)
 Prato(long id, String nome, String descricao, double preco)
 Cardapio(long id, List<Prato> pratos, long restaurante)
 Pedido(long id, Cliente cliente, List<Prato> pratos)
-
-
+```
+```java
 LoginService
 //Se ok: retorna o código do restaurante
   "login/" - POST(String login, String senha, String cargo)
@@ -56,3 +57,4 @@ GarcomService
 
 //Quando o garcom entrega o prato, o prato deve ser removido da lista do garcom e adicionado na lista do gerente
 "garcom/prato" - DELETE(Prato prato, long restaurante)
+```
