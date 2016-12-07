@@ -1,5 +1,6 @@
 # MeuGarcom
 
+##Entidades
 ```javascript
 Usuario(long id, String nome, String cargo, String login, String senha, long restaurante)
 Restaurante(long id, long longitude, long latitude, String nome, int qntMesa)
@@ -8,6 +9,8 @@ Prato(long id, String nome, String descricao, double preco)
 Cardapio(long id, List<Prato> pratos, long restaurante)
 Pedido(long id, Cliente cliente, List<Prato> pratos)
 ```
+
+##API
 ```java
 LoginService
 //Se ok: retorna o código do restaurante
@@ -47,7 +50,8 @@ CozinhaService
 //Adiciona um pedido(contem uma lista de pratos) na lista de pratos para serem preparados
   "cozinha/pedido" - POST(Cliente cliente, Pedido pedido, long restaurante)
 
-//Quando o prato for preparado, o prato deve ser retirado da lista da cozinha e adicionado na lista do garcom
+//Quando o prato for preparado, o prato deve ser retirado
+// da lista da cozinha e adicionado na lista do garcom
   "cozinha/prato" - DELETE(Prato prato, long restaurante)
 
 
@@ -55,6 +59,7 @@ GarcomService
 //Retorna a lista de pratos para serem entregues(já estão preparados)
   "garcom/pedido" - GET(long restaurante)
 
-//Quando o garcom entrega o prato, o prato deve ser removido da lista do garcom e adicionado na lista do gerente
+//Quando o garcom entrega o prato, o prato deve ser removido da
+// lista do garcom e adicionado na lista do gerente
 "garcom/prato" - DELETE(Prato prato, long restaurante)
 ```

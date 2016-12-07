@@ -15,8 +15,15 @@
       </div>
 
       <div class="form-group">
-        <label for=""></label>
-        <input type="text" class="form-control" id="" placeholder="" ng-model="cargo">
+        <label for="cargo">Cargo</label>
+        <input type="text" class="form-control" id="cargo" ng-model="cargo">
+      </div>
+
+      <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <select id="cargo" ng-model="cargo" ng-options="c in cargos">
+          <option value="">Selecione um Cargo</option>
+        </select>
       </div>
 
       <button class='btn btn-block btn-success' ng-click="login(usuario, senha, cargo)">Login</button>
