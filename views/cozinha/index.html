@@ -3,21 +3,23 @@
 
     <table class="table table-striped">
       <tr>
-        <th>Codigo</th>
         <th>Nome</th>
         <th>Descricao</th>
-        <th>Preco</th>
+        <th>Cliente</th>
+        <th>Mesa</th>
         <th></th>
       </tr>
 
-      <tr ng-repeat="prato in pratos">
-        <td>{{prato.id}}</td>
-        <td>{{prato.nome}}</td>
-        <td>{{prato.descricao}}</td>
-        <td>{{prato.preco}}</td>
-        <td><a href="#" ng-click="pratoPronto(prato)">Prato pronto</a></td>
+      <tr ng-repeat="pedido in pedidos">
+        <td>{{pedido.prato.nome}}</td>
+        <td>{{pedido.prato.descricao}}</td>
+        <td>{{pedido.cliente.nome}}</td>
+        <td>{{pedido.cliente.mesa}}</td>
+        <td><button class="btn btn-warning" href="#" ng-click="pedidoPronto(pedido)">Pedido Pronto</a></td>
       </tr>
     </table>
+
+{{certo}}
 
   </div>
 </div>

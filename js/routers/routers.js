@@ -21,7 +21,7 @@ app
       })
 
       .state('gerente', {
-        url: '/gerente'
+        url: '/gerente/relatorio'
         , views: {
           'navbar': {
             templateUrl: 'views/gerente/header.html'
@@ -35,7 +35,7 @@ app
       })
 
       .state('funcionario', {
-        url: '/funcionario'
+        url: '/gerente/funcionario'
         , views: {
           'navbar': {
             templateUrl: 'views/gerente/header.html'
@@ -63,7 +63,7 @@ app
       })
 
       .state('cardapio', {
-        url: '/cardapio'
+        url: '/gerente/cardapio'
         , views: {
           'navbar': {
             templateUrl: 'views/gerente/header.html'

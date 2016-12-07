@@ -1,9 +1,20 @@
 <div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <h4>Relatorio - Pedidos realizados</h4>
 
-  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-striped">
+      <tr>
+        <th>Nome</th>
+        <th>Cliente</th>
+        <th>Mesa</th>
+      </tr>
 
-    {{relatorio}}
+      <tr ng-repeat="pedido in pedidos">
+        <td>{{pedido.prato.nome}}</td>
+        <td>{{pedido.cliente.nome}}</td>
+        <td>{{pedido.cliente.mesa}}</td>
+      </tr>
+    </table>
 
   </div>
-
 </div>

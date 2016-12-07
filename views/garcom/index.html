@@ -9,11 +9,11 @@
         <th></th>
       </tr>
 
-      <tr ng-repeat="prato in pratosProntos">
-        <td>{{prato.nome}}</td>
-        <td>{{prato.cliente.nome}}</td>
-        <td>{{prato.cliente.mesa}}</td>
-        <td><button class="btn btn-warning" ng-click="pratoEntregue(prato)">Entregar Prato</button></td>
+      <tr ng-repeat="pedido in pedidos">
+        <td>{{pedido.prato.nome}}</td>
+        <td>{{pedido.cliente.nome}}</td>
+        <td>{{pedido.cliente.mesa}}</td>
+        <td><button class="btn btn-warning" ng-click="pedidoEntregue(pedido)">Entregar Pedido</button></td>
       </tr>
     </table>
 

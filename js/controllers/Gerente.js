@@ -2,10 +2,10 @@ app
 
   .controller('GerenteController', function ($scope, $state) {
 
+    $scope.title = 'Gerente'
   })
 
-  .controller('RelatorioController', function ($scope) {
-
+  .controller('CardapioController', function ($scope) {
+    
   })
-
 ;

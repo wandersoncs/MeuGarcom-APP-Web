@@ -1,9 +1,12 @@
 app
 
-  .controller('CozinhaController', function ($scope) {
+  .controller('CozinhaController', function ($scope, meugarcomService) {
+
     $scope.title = 'Pratos para serem preparados';
 
-    $scope.logout = function () {
+    $scope.pedidos = [];
+
+    $scope.pedidoPronto = function (pedido) {
 
     };
 
