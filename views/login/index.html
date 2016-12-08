@@ -1,22 +1,21 @@
 <div class="row">
 
   <div class="col-md-4 col-md-offset-4 login">
-    {{teste}}
     <form name="formLogin">
 
       <div class="form-group">
         <label for="username">Usuario</label>
-        <input type="text" class="form-control" id="username" ng-model="login" required>
+        <input type="text" class="form-control" id="username" ng-model="user.loginDigitado" required>
       </div>
 
       <div class="form-group">
         <label for="password">Senha</label>
-        <input type="password" class="form-control" id="password" ng-model="senha" required>
+        <input type="password" class="form-control" id="password" ng-model="user.senhaDigitada" required>
       </div>
 
       <div class="form-group">
         <label for="cargo">Cargo</label>
-        <select class="form-control" id="cargo" ng-model="cargo" required>
+        <select class="form-control" id="cargo" ng-model="user.cargo" required>
           <option value="">Selecione um cargo</option>
           <option value="garcom">garcom</option>
           <option value="cozinha">cozinha</option>
@@ -24,7 +23,7 @@
         </select>
       </div>
 
-      <button ng-disabled="formLogin.$invalid" class='btn btn-block btn-success' ng-click="logar(login, senha, cargo)">Login</button>
+      <button ng-disabled="formLogin.$invalid" class='btn btn-block btn-success' ng-click="logar(user)">Login</button>
 
     </form>
 

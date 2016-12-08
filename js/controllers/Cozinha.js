@@ -1,25 +1,32 @@
 app
 
-  .controller('CozinhaController', function ($scope, $timeout, meugarcomService) {
+  .controller('CozinhaController', function ($scope, $timeout, meugarcomService, $interval) {
 
     $scope.title = 'Pratos para serem preparados';
 
     $scope.pedidos = [];
 
-    meugarcomService.getPedidosCozinha().success(function (data) {
-      $scope.$apply(function () {
-        $scope.pedidos = data;
+    $interval(function () {
+      meugarcomService.atualizarPedidoCozinha().success(function (data) {
+        if (pedidos.length !== data.quantidade)
+          atualizar();
       });
-    });
+    }, 5000);
+
+    var atualizar = function () {
+      meugarcomService.getPedidosCozinha().success(function (data) {
+        $timeout(function () {
+          $scope.pedidos = data;
+        });
+      });
+    };
+
+    atualizar();
 
     $scope.pedidoPronto = function (pedido) {
       meugarcomService.removerPedidoCozinha(pedido.id).success(function (data) {
-        meugarcomService.getPedidosCozinha().success(function (data) {
-          $scope.$apply(function () {
-            $scope.pedidos = data;
-          });
+        atualizar();
         });
-      });
     };
 
   })

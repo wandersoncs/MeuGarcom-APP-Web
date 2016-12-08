@@ -5,13 +5,17 @@
 
   angular.module('meugarcom.api')
 
+    .config(function ($httpProvider) {
+      $httpProvider.defaults.headers.delete = { 'Content-Type' : 'application/json' };
+    })
+
     .service('meugarcomService', ['$http', function($http) {
 
       var URL_BASE = 'http://localhost:8080/';
 
-      var _login = function (login, senha, cargo) {
+      var _login = function (loginForm) {
         var url = URL_BASE + 'login';
-        return $http.post(url, login, senha, cargo);
+        return $http.post(url, loginForm);
       };
 
       var _getCardapio = function () {
@@ -25,22 +29,22 @@
       };
 
       var _getPedidosCozinha = function () {
-        var url = URL_BASE + 'pedidos/cozinha';
+        var url = URL_BASE + 'cozinha/pedido';
         return $http.get(url);
       };
 
       var _getPedidosGarcom = function () {
-        var url = URL_BASE + 'pedidos/garcom';
+        var url = URL_BASE + 'garcom/pedido';
         return $http.get(url);
       };
 
       var _getPedidosGerente = function () {
-        var url = URL_BASE + 'pedidos/gerente'
+        var url = URL_BASE + 'gerente/pedido'
         return $http.get(url);
       };
 
       var _removerPedidoCozinha = function (id) {
-        var url = URL_BASE + 'cozinha/pedido';
+        var url = URL_BASE + 'cozinha/pedido/' + id;
         return $http.delete(url);
       };
 
@@ -60,6 +64,7 @@
       };
 
       var _adicionarFuncionario = function (funcionario) {
+        funcionario.cod_usuario = 1;
         var url = URL_BASE + 'gerente/funcionario';
         return $http.post(url, funcionario);
       };
@@ -67,6 +72,16 @@
       var _removerFuncionario = function (id) {
         var url = URL_BASE + 'gerente/funcionario/' + id;
         return $http.delete(url);
+      };
+
+      var _atualizarPedidoGarcom = function () {
+        var url = URL_BASE + 'garcom/pedido/quantidade'
+        return $http.get(url);
+      };
+
+      var _atualizarPedidoCozinha = function () {
+        var url = URL_BASE + 'garcom/cozinha/quantidade'
+        return $http.get(url);
       };
 
       return {
@@ -82,6 +97,8 @@
         , removerPedidoGarcom: _removerPedidoGarcom
         , removerPrato: _removerPrato
         , removerFuncionario: _removerFuncionario
+        , atualizarPedidoGarcom: _atualizarPedidoGarcom
+        , atualizarPedidoCozinha: _atualizarPedidoCozinha
       };
     }]);
 

@@ -1,6 +1,6 @@
 app
 
-  .controller('GerenteController', function ($scope, meugarcomService) {
+  .controller('GerenteController', function ($scope, $timeout, meugarcomService) {
     $scope.title = 'Gerente';
     $scope.pedidos = [];
 
@@ -10,12 +10,12 @@ app
 
   })
 
-  .controller('CardapioController', function ($scope, meugarcomService) {
+  .controller('CardapioController', function ($scope, $timeout, meugarcomService) {
     $scope.cardapio = [];
 
     var atualizar = function () {
       meugarcomService.getCardapio().success(function (data) {
-        $scope.$apply(function () {
+        $timeout(function () {
           $scope.cardapio = data;
         });
       });
@@ -38,13 +38,13 @@ app
 
   })
 
-  .controller('FuncionarioController', function ($scope, meugarcomService, $state) {
+  .controller('FuncionarioController', function ($scope, meugarcomService, $state, $timeout) {
 
     $scope.funcionario = [];
 
     var atualizar = function () {
       meugarcomService.getFuncionarios().success(function (data) {
-        $scope.$apply(function () {
+        $timeout(function () {
           $scope.funcionarios = data;
         });
       });
@@ -52,14 +52,14 @@ app
 
     atualizar();
 
-    $scope.adicionarFuncionario = function (usuario) {
-      meugarcomService.adicionarFuncionario(usuario).success(function () {
+    $scope.adicionarFuncionario = function (funcionario) {
+      meugarcomService.adicionarFuncionario(funcionario).success(function () {
         atualizar();
       });
     };
 
     $scope.removerFuncionario = function (funcionario) {
-      meugarcomService.removerFuncionario(funcionario.id).success(function () {
+      meugarcomService.removerFuncionario(funcionario.cod_usuario).success(function () {
         atualizar();
       });
     };

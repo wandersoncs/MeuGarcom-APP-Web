@@ -10,12 +10,12 @@
         <th></th>
       </tr>
 
-      <tr ng-repeat="prato in pratos">
-        <td>{{prato.id}}</td>
-        <td>{{prato.nome}}</td>
-        <td>{{prato.descricao}}</td>
-        <td>{{prato.preco}}</td>
-        <td><a href="#" ng-click="removerPrato(prato)">Remover</a></td>
+      <tr ng-repeat="p in cardapio">
+        <td>{{p.id}}</td>
+        <td>{{p.nome}}</td>
+        <td>{{p.descricao}}</td>
+        <td>{{p.preco}}</td>
+        <td><button class="btn btn-danger" ng-click="removerPrato(p)">Remover</button></td>
       </tr>
 
       <tr>

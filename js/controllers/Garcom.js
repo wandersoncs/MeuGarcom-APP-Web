@@ -1,25 +1,31 @@
 app
 
-  .controller('GarcomController', function ($scope) {
+  .controller('GarcomController', function ($scope, $timeout, $interval) {
 
     $scope.title = 'Pratos para serem entregues';
 
     $scope.pedidos = [];
-
-    meugarcomService.getPedidosGarcom().success(function (data) {
-      $scope.$apply(function () {
-        $scope.pedidos = data;
+    var atualizar = function () {
+      meugarcomService.getPedidosGarcom().success(function (data) {
+        $timeout(function () {
+          $scope.pedidos = data;
+        });
       });
-    });
+    };
+
+    atualizar();
+
+    $interval(function () {
+      meugarcomService.atualizarPedidoGarcom().success(function (data) {
+        if (pedidos.length !== data.quantidade)
+          atualizar();
+      });
+    }, 5000);
 
     $scope.pedidoEntregue = function (pedido) {
       meugarcomService.removerPedidoGarcom(pedido.id).success(function () {
-        meugarcomService.getPedidosGarcom().success(function (data) {
-          $scope.$apply(function () {
-            $scope.pedidos = data;
-          });
-        });
-      })
+        atualizar();
+      });
     };
 
   })

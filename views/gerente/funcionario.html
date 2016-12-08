@@ -11,37 +11,37 @@
       </tr>
 
       <tr ng-repeat="funcionario in funcionarios">
-        <td>{{funcionario.id}}</td>
+        <td>{{funcionario.cod_usuario}}</td>
         <td>{{funcionario.nome}}</td>
-        <td>{{funcionario.cardo}}</td>
+        <td>{{funcionario.cargo}}</td>
         <td>{{funcionario.login}}</td>
-        <td><a href="#" ng-click="removerFuncionario(funcionario)">Remover</a></td>
+        <td><button class="btn btn-danger" ng-click="removerFuncionario(funcionario)">Remover</button></td>
       </tr>
     </table>
   </div>
 
   <div class="col-md-3">
     <h4>Adicionar Funcionario</h4>
-    <form>
+    <form name="form_usuario">
 
       <div class="form-group">
         <label for="username">Nome</label>
-        <input type="text" class="form-control" id="username" ng-model="funcionario.nome" required>
+        <input type="text" class="form-control" id="username" ng-model="usuario.nome" required>
       </div>
 
       <div class="form-group">
         <label for="login">Login</label>
-        <input type="text" class="form-control" id="login" ng-model="funcionario.login" required>
+        <input type="text" class="form-control" id="login" ng-model="usuario.login" required>
       </div>
 
       <div class="form-group">
         <label for="password">Senha</label>
-        <input type="password" class="form-control" id="password" ng-model="funcionario.senha" required>
+        <input type="password" class="form-control" id="password" ng-model="usuario.senha" required>
       </div>
 
       <div class="form-group">
         <label for="cargo">Cargo</label>
-        <select class="form-control" id="cargo" ng-model="funcionario.cargo" required>
+        <select class="form-control" id="cargo" ng-model="usuario.cargo" required>
           <option value="">Selecione um cargo</option>
           <option value="garcom">garcom</option>
           <option value="cozinha">cozinha</option>
@@ -49,7 +49,7 @@
         </select>
       </div>
 
-      <button type="submit" class='btn btn-block btn-success' ng-click="adicionarFuncionario(funcionario)">Adicionar</button>
+      <button type="submit" class='btn btn-block btn-success' ng-disabled="form_usuario$invalid" ng-click="adicionarFuncionario(usuario)">Adicionar</button>
 
     </form>
   </div>
