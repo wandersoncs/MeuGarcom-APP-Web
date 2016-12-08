@@ -80,7 +80,7 @@
       };
 
       var _atualizarPedidoCozinha = function () {
-        var url = URL_BASE + 'garcom/cozinha/quantidade'
+        var url = URL_BASE + '/cozinha/pedido/quantidade'
         return $http.get(url);
       };
 

@@ -8,7 +8,7 @@ app
 
     $interval(function () {
       meugarcomService.atualizarPedidoCozinha().success(function (data) {
-        if (pedidos.length !== data.quantidade)
+        if ($scope.pedidos.length !== data.quantidade)
           atualizar();
       });
     }, 5000);

@@ -1,6 +1,6 @@
 app
 
-  .controller('GarcomController', function ($scope, $timeout, $interval) {
+  .controller('GarcomController', function ($scope, $timeout, $interval, meugarcomService) {
 
     $scope.title = 'Pratos para serem entregues';
 
@@ -17,7 +17,7 @@ app
 
     $interval(function () {
       meugarcomService.atualizarPedidoGarcom().success(function (data) {
-        if (pedidos.length !== data.quantidade)
+        if ($scope.pedidos.length !== data.quantidade)
           atualizar();
       });
     }, 5000);

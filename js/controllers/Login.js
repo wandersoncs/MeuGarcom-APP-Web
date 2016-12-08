@@ -4,7 +4,6 @@ app
 
     $scope.logar = function (user) {
       meugarcomService.login(user).success(function (data) {
-        if (data.msg === 'OK') {
           switch (user.cargo) {
             case 'gerente':
             $state.go('gerente');
@@ -16,7 +15,6 @@ app
             $state.go('cozinha');
             break;
           }
-        }
       });
     };
 
