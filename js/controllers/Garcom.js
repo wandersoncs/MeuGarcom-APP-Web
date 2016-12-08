@@ -6,8 +6,20 @@ app
 
     $scope.pedidos = [];
 
-    $scope.pedidoEntregue = function (pedido) {
+    meugarcomService.getPedidosGarcom().success(function (data) {
+      $scope.$apply(function () {
+        $scope.pedidos = data;
+      });
+    });
 
+    $scope.pedidoEntregue = function (pedido) {
+      meugarcomService.removerPedidoGarcom(pedido.id).success(function () {
+        meugarcomService.getPedidosGarcom().success(function (data) {
+          $scope.$apply(function () {
+            $scope.pedidos = data;
+          });
+        });
+      })
     };
 
   })

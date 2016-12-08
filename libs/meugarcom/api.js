@@ -5,13 +5,13 @@
 
   angular.module('meugarcom.api')
 
-    .constant('URL_BASE', 'http://127.0.0.1/')
+    .service('meugarcomService', ['$http', function($http) {
 
-    .factory('meugarcomService', ['$http', function($http) {
+      var URL_BASE = 'http://localhost:8080/';
 
-      var _login = function (usuario) {
+      var _login = function (login, senha, cargo) {
         var url = URL_BASE + 'login';
-        return $http.post(url, usuario.login, usuario.senha, usuario.cargo);
+        return $http.post(url, login, senha, cargo);
       };
 
       var _getCardapio = function () {
@@ -39,7 +39,7 @@
         return $http.get(url);
       };
 
-      var _removerPedidoCozinha = function () {
+      var _removerPedidoCozinha = function (id) {
         var url = URL_BASE + 'cozinha/pedido';
         return $http.delete(url);
       };
@@ -60,8 +60,8 @@
       };
 
       var _adicionarFuncionario = function (funcionario) {
-        var url = URL_BASE + 'funcionario';
-        return $http.post(funcionario);
+        var url = URL_BASE + 'gerente/funcionario';
+        return $http.post(url, funcionario);
       };
 
       var _removerFuncionario = function (id) {

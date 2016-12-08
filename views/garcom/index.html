@@ -4,14 +4,14 @@
     <table class="table table-striped">
       <tr>
         <th>Nome</th>
-        <th>Cliente</th>
+        <th>Descricao</th>
         <th>Mesa</th>
         <th></th>
       </tr>
 
       <tr ng-repeat="pedido in pedidos">
         <td>{{pedido.prato.nome}}</td>
-        <td>{{pedido.cliente.nome}}</td>
+        <td>{{pedido.prato.nome}}</td>
         <td>{{pedido.cliente.mesa}}</td>
         <td><button class="btn btn-warning" ng-click="pedidoEntregue(pedido)">Entregar Pedido</button></td>
       </tr>

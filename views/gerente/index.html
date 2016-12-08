@@ -5,14 +5,14 @@
     <table class="table table-striped">
       <tr>
         <th>Nome</th>
-        <th>Cliente</th>
+        <th>Descricao</th>
         <th>Mesa</th>
       </tr>
 
       <tr ng-repeat="pedido in pedidos">
         <td>{{pedido.prato.nome}}</td>
-        <td>{{pedido.cliente.nome}}</td>
-        <td>{{pedido.cliente.mesa}}</td>
+        <td>{{pedido.descricao}}</td>
+        <td>{{pedido.mesa}}</td>
       </tr>
     </table>
 

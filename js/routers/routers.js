@@ -43,21 +43,7 @@ app
           }
           , 'content': {
             templateUrl: 'views/gerente/funcionario.html'
-            , controller: 'GerenteController'
-          }
-        }
-      })
-
-      .state('cozinha', {
-        url: '/cozinha'
-        , views: {
-          'navbar': {
-            templateUrl: 'views/cozinha/header.html'
-            , controller: 'CozinhaController'
-          }
-          , 'content': {
-            templateUrl: 'views/cozinha/index.html'
-            , controller: 'CozinhaController'
+            , controller: 'FuncionarioController'
           }
         }
       })
@@ -72,6 +58,20 @@ app
           , 'content': {
             templateUrl: 'views/gerente/cardapio.html'
             , controller: 'CardapioController'
+          }
+        }
+      })
+
+      .state('cozinha', {
+        url: '/cozinha'
+        , views: {
+          'navbar': {
+            templateUrl: 'views/cozinha/header.html'
+            , controller: 'CozinhaController'
+          }
+          , 'content': {
+            templateUrl: 'views/cozinha/index.html'
+            , controller: 'CozinhaController'
           }
         }
       })
