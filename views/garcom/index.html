@@ -3,6 +3,7 @@
 
     <table class="table table-striped">
       <tr>
+        <th>ID</th>
         <th>Nome</th>
         <th>Descricao</th>
         <th>Mesa</th>
@@ -10,9 +11,10 @@
       </tr>
 
       <tr ng-repeat="pedido in pedidos">
-        <td>{{pedido.prato.nome}}</td>
-        <td>{{pedido.prato.nome}}</td>
-        <td>{{pedido.cliente.mesa}}</td>
+        <td>{{pedido.id}}</td>
+        <td>{{pedido.nome}}</td>
+        <td>{{pedido.descricao}}</td>
+        <td>{{pedido.mesa}}</td>
         <td><button class="btn btn-warning" ng-click="pedidoEntregue(pedido)">Entregar Pedido</button></td>
       </tr>
     </table>

@@ -4,13 +4,15 @@
 
     <table class="table table-striped">
       <tr>
+        <th>ID</th>
         <th>Nome</th>
         <th>Descricao</th>
         <th>Mesa</th>
       </tr>
 
       <tr ng-repeat="pedido in pedidos">
-        <td>{{pedido.prato.nome}}</td>
+        <td>{{pedido.id}}</td>
+        <td>{{pedido.nome}}</td>
         <td>{{pedido.descricao}}</td>
         <td>{{pedido.mesa}}</td>
       </tr>
